@@ -16,9 +16,8 @@ class sfCaptchaActions extends sfActions
    */
   public function executeIndex()
   {
-    $this->getResponse()->setContentType('image/jpeg');
-
-    $g = new Captcha($this->getUser()->getAttribute('captcha'));
-    print($g->plot());
-  }
+  	$captcha = new Captcha();  	
+  	$captcha->Set($captcha->generate());
+  	print $captcha->plot();
+   }
 }
