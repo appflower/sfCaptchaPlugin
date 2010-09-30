@@ -1,6 +1,6 @@
 <?php
 
-class captchaValidator extends sfValidator {
+class captchaValidator extends sfValidatorBase {
   public function execute (&$value, &$error) {
     $g = new Captcha(sfContext::getInstance()->getUser()->getAttribute('captcha'));
     if ($g->verify($value)) 
