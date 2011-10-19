@@ -16,6 +16,8 @@ class sfCaptchaActions extends sfActions
    */
   public function executeIndex()
   {
+  	$this->setLayout(false);
+  	
   	$captcha = new Captcha();  	
   	$captcha->Set($captcha->generate());
   	print $captcha->plot();
